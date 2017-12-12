@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"org.fomocoin.Litecoin-Qt";
+        return @"org.fomocoin.BitcoinFomo-Qt";
     } else {
         return [self __bundleIdentifier];
     }

@@ -16,8 +16,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Litecoin"
-            VALUE "FileDescription",    "fomocoin-tx (CLI Litecoin transaction editor utility)"
+            VALUE "CompanyName",        "BitcoinFomo"
+            VALUE "FileDescription",    "fomocoin-tx (CLI BitcoinFomo transaction editor utility)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "fomocoin-tx"
             VALUE "LegalCopyright",     COPYRIGHT_STR
