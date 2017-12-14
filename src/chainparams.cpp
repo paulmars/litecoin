@@ -118,7 +118,7 @@ public:
         nDefaultPort = 4030;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1513197897, 2084524493, 0x1e0ffff0, 10, 50 * COIN);
+        genesis = CreateGenesisBlock(1513197897, 2084524493, 0x2e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         LogPrintf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %s\n\n\n", genesis.GetHash().ToString());
         LogPrintf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %s\n\n\n", genesis.hashMerkleRoot.ToString());
