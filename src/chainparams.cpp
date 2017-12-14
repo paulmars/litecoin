@@ -348,7 +348,7 @@ const CChainParams &Params() {
 
 std::unique_ptr<CChainParams> CreateChainParams(const std::string& chain)
 {
-    strprintf("!!!!!!!!!!!!!! CreateChainParams")
+    strprintf("!!!!!!!!!!!!!! CreateChainParams");
     if (chain == CBaseChainParams::MAIN)
         return std::unique_ptr<CChainParams>(new CMainParams());
     else if (chain == CBaseChainParams::TESTNET)
@@ -360,7 +360,7 @@ std::unique_ptr<CChainParams> CreateChainParams(const std::string& chain)
 
 void SelectParams(const std::string& network)
 {
-    strprintf("!!!!!!!!!!!!!! SelectParams")
+    strprintf("!!!!!!!!!!!!!! SelectParams");
     SelectBaseParams(network);
     globalChainParams = CreateChainParams(network);
 }
