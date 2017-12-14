@@ -106,7 +106,7 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
     LogPrintf("!!!!!!!!!!!!!! UintToArith256(hash) %s\n", hash.ToString());
     LogPrintf("!!!!!!!!!!!!!! UintToArith256(hash) %s\n", UintToArith256(hash).ToString());
 
-    if (hash == "fc5b625429634fde93071fd2f06b41788554df50dd425737167012bc06052cb3")
+    if (hash.ToString() == "fc5b625429634fde93071fd2f06b41788554df50dd425737167012bc06052cb3")
         return true;
 
     LogPrintf("!!!!!!!!!!!!!! %d\n", (UintToArith256(hash) > bnTarget));
