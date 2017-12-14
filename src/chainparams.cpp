@@ -122,8 +122,8 @@ public:
         consensus.hashGenesisBlock = genesis.GetHash();
         LogPrintf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %s\n\n\n", genesis.GetHash().ToString());
         LogPrintf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %s\n\n\n", genesis.hashMerkleRoot.ToString());
-        assert(consensus.hashGenesisBlock == uint256S("0xbb228d1848c36671bf1629813b4fbe00af20508b2a78871795a817e97b435110"));
-        assert(genesis.hashMerkleRoot == uint256S("0xa6ed73daffa35e3bad3b9e87a3d2fee722ddce82d4dc46cc3ac42363de5958ad"));
+        // assert(consensus.hashGenesisBlock == uint256S("0xbb228d1848c36671bf1629813b4fbe00af20508b2a78871795a817e97b435110"));
+        // assert(genesis.hashMerkleRoot == uint256S("0xa6ed73daffa35e3bad3b9e87a3d2fee722ddce82d4dc46cc3ac42363de5958ad"));
 
 
         // Note that of those with the service bits flag, most only support a subset of possible options
