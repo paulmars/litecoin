@@ -725,6 +725,7 @@ bool AppInitServers(boost::thread_group& threadGroup)
     RPCServer::OnStarted(&OnRPCStarted);
     RPCServer::OnStopped(&OnRPCStopped);
     RPCServer::OnPreCommand(&OnRPCPreCommand);
+    LogPrintf("!!!!!!!!!!!!!!!!!!!!!!!!!! init.cpp AppInitServers\n");
     if (!InitHTTPServer())
         return false;
     if (!StartRPC())
@@ -816,7 +817,6 @@ void InitLogging()
 
 
     LogPrintf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-    LogPrintf("!!!!!!!!!!!!!!!!!!!!!!!!!! InitLogging");
     LogPrintf("BitcoinFomo version %s\n", FormatFullVersion());
 }
 
@@ -1243,6 +1243,7 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
     if (gArgs.GetBoolArg("-server", false))
     {
         uiInterface.InitMessage.connect(SetRPCWarmupStatus);
+        LogPrintf("!!!!!!!!!!!!!!!!!!!!!!!!!! init.cpp AppInitServers\n");
         if (!AppInitServers(threadGroup))
             return InitError(_("Unable to start HTTP server. See debug log for details."));
     }

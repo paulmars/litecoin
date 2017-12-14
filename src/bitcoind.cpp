@@ -128,6 +128,8 @@ bool AppInit(int argc, char* argv[])
         // -server defaults to true for bitcoind but not for the GUI so do this here
         gArgs.SoftSetBoolArg("-server", true);
         // Set this early so that parameter interactions go to console
+        LogPrintf("!!!!!!!!!!!!!!!!!!!!!!!!!! bitcoind.cpp InitLogging\n");
+
         InitLogging();
         InitParameterInteraction();
         if (!AppInitBasicSetup())
@@ -135,6 +137,7 @@ bool AppInit(int argc, char* argv[])
             // InitError will have been called with detailed error, which ends up on console
             exit(EXIT_FAILURE);
         }
+        LogPrintf("!!!!!!!!!!!!!!!!!!!!!!!!!! bitcoind.cpp AppInitParameterInteraction\n");
         if (!AppInitParameterInteraction())
         {
             // InitError will have been called with detailed error, which ends up on console
@@ -166,6 +169,7 @@ bool AppInit(int argc, char* argv[])
             // If locking the data directory failed, exit immediately
             exit(EXIT_FAILURE);
         }
+        LogPrintf("!!!!!!!!!!!!!!!!!!!!!!!!!! bitcoind.cpp AppInitMain\n");
         fRet = AppInitMain(threadGroup, scheduler);
     }
     catch (const std::exception& e) {
