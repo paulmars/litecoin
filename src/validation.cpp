@@ -1005,7 +1005,6 @@ bool ReadBlockFromDisk(CBlock& block, const CDiskBlockPos& pos, const Consensus:
 
     LogPrintf("!!!!!!!!!!!!!! %s\n", block.GetPoWHash().ToString());
     LogPrintf("!!!!!!!!!!!!!! %i\n", block.nBits);
-    LogPrintf("!!!!!!!!!!!!!! %s\n", consensusParams);
 
     // Check the header
     if (!CheckProofOfWork(block.GetPoWHash(), block.nBits, consensusParams))
