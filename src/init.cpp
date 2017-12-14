@@ -814,7 +814,9 @@ void InitLogging()
     fLogTimeMicros = gArgs.GetBoolArg("-logtimemicros", DEFAULT_LOGTIMEMICROS);
     fLogIPs = gArgs.GetBoolArg("-logips", DEFAULT_LOGIPS);
 
+
     LogPrintf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    LogPrintf("!!!!!!!!!!!!!!!!!!!!!!!!!! InitLogging");
     LogPrintf("BitcoinFomo version %s\n", FormatFullVersion());
 }
 
