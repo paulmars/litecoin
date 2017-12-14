@@ -103,7 +103,7 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
     LogPrintf("!!!!!!!!!!!!!! check range passed\n");
 
     // LogPrintf("!!!!!!!!!!!!!! bnTarget %s\n", bnTarget.toString());
-    LogPrintf("!!!!!!!!!!!!!! UintToArith256(hash) %s\n", hash.toString());
+    LogPrintf("!!!!!!!!!!!!!! UintToArith256(hash) %s\n", hash.ToString());
     // LogPrintf("!!!!!!!!!!!!!! UintToArith256(hash) %s\n", UintToArith256(hash).toString());
 
     LogPrintf("!!!!!!!!!!!!!! %d\n", (UintToArith256(hash) > bnTarget));
