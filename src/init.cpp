@@ -1578,11 +1578,15 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
 
     // ********************************************************* Step 8: load wallet
 #ifdef ENABLE_WALLET
+    LogPrintf("!!!!!!!!!!!!!! init.cpp - InitLoadWallet\n");
     if (!CWallet::InitLoadWallet())
         return false;
 #else
     LogPrintf("No wallet support compiled in!\n");
 #endif
+
+    LogPrintf("!!!!!!!!!!!!!! init.cpp - InitLoadWallet - end\n");
+
 
     // ********************************************************* Step 9: data directory maintenance
 
@@ -1597,6 +1601,8 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
         }
     }
 
+    LogPrintf("!!!!!!!!!!!!!! init.cpp - prune mode end\n");
+
     if (chainparams.GetConsensus().vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout != 0) {
         // Only advertise witness capabilities if they have a reasonable start time.
         // This allows us to have the code merged without a defined softfork, by setting its
@@ -1608,6 +1614,8 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
         // defined.
         nRelevantServices = ServiceFlags(nRelevantServices | NODE_WITNESS);
     }
+
+    LogPrintf("!!!!!!!!!!!!!! init.cpp - segwit end\n");
 
     // ********************************************************* Step 10: import blocks
 
@@ -1621,6 +1629,8 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
     } else {
         fHaveGenesis = true;
     }
+
+    LogPrintf("!!!!!!!!!!!!!! init.cpp - chain active end\n");
 
     if (gArgs.IsArgSet("-blocknotify"))
         uiInterface.NotifyBlockTip.connect(BlockNotifyCallback);
@@ -1704,6 +1714,7 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
     }
 
     // ********************************************************* Step 12: finished
+    LogPrintf("!!!!!!!!!!!!!! init.cpp - before done loading\n");
 
     SetRPCWarmupFinished();
     uiInterface.InitMessage(_("Done loading"));

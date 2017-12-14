@@ -3946,6 +3946,7 @@ CWallet* CWallet::CreateWalletFromFile(const std::string walletFile)
         delete tempWallet;
         tempWallet = nullptr;
     }
+    LogPrintf("!!!!!!!!!!!!!! wallet.cpp create wallet\n");
 
     uiInterface.InitMessage(_("Loading wallet..."));
 
