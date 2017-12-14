@@ -1635,12 +1635,16 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
     if (gArgs.IsArgSet("-blocknotify"))
         uiInterface.NotifyBlockTip.connect(BlockNotifyCallback);
 
+    LogPrintf("!!!!!!!!!!!!!! init.cpp - chain active end - 1\n");
+
     std::vector<fs::path> vImportFiles;
     for (const std::string& strFile : gArgs.GetArgs("-loadblock")) {
         vImportFiles.push_back(strFile);
     }
 
     threadGroup.create_thread(boost::bind(&ThreadImport, vImportFiles));
+
+    LogPrintf("!!!!!!!!!!!!!! init.cpp - chain active end - 2\n");
 
     // Wait for genesis block to be processed
     {
@@ -1650,6 +1654,8 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
         }
         uiInterface.NotifyBlockTip.disconnect(BlockNotifyGenesisWait);
     }
+
+    LogPrintf("!!!!!!!!!!!!!! init.cpp - chain active end - 3\n");
 
     // ********************************************************* Step 11: start node
 
@@ -1663,6 +1669,8 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
 
     // Map ports with UPnP
     MapPort(gArgs.GetBoolArg("-upnp", DEFAULT_UPNP));
+
+    LogPrintf("!!!!!!!!!!!!!! init.cpp - chain active end - 4\n");
 
     CConnman::Options connOptions;
     connOptions.nLocalServices = nLocalServices;
@@ -1678,6 +1686,8 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
 
     connOptions.nMaxOutboundTimeframe = nMaxOutboundTimeframe;
     connOptions.nMaxOutboundLimit = nMaxOutboundLimit;
+
+    LogPrintf("!!!!!!!!!!!!!! init.cpp - chain active end - 5\n");
 
     for (const std::string& strBind : gArgs.GetArgs("-bind")) {
         CService addrBind;
@@ -1696,6 +1706,9 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
         }
         connOptions.vWhiteBinds.push_back(addrBind);
     }
+
+    LogPrintf("!!!!!!!!!!!!!! init.cpp - chain active end - 6\n");
+
 
     for (const auto& net : gArgs.GetArgs("-whitelist")) {
         CSubNet subnet;
