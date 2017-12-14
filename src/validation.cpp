@@ -1007,8 +1007,8 @@ bool ReadBlockFromDisk(CBlock& block, const CDiskBlockPos& pos, const Consensus:
     LogPrintf("!!!!!!!!!!!!!! %i\n", block.nBits);
 
     // Check the header
-    if (!CheckProofOfWork(block.GetPoWHash(), block.nBits, consensusParams))
-        return error("ReadBlockFromDisk: Errors in block header at %s", pos.ToString());
+    // if (!CheckProofOfWork(block.GetPoWHash(), block.nBits, consensusParams))
+    //     return error("ReadBlockFromDisk: Errors in block header at %s", pos.ToString());
 
     LogPrintf("!!!!!!!!!!!!!! validation -  read block from disk - after poof or work\n");
 
