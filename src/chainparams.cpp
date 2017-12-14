@@ -118,6 +118,7 @@ public:
         nDefaultPort = 4030;
         nPruneAfterHeight = 100000;
 
+        LogPrintf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         genesis = CreateGenesisBlock(1513197897, 389545, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         LogPrintf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
@@ -347,6 +348,7 @@ const CChainParams &Params() {
 
 std::unique_ptr<CChainParams> CreateChainParams(const std::string& chain)
 {
+    strprintf("!!!!!!!!!!!!!! CreateChainParams")
     if (chain == CBaseChainParams::MAIN)
         return std::unique_ptr<CChainParams>(new CMainParams());
     else if (chain == CBaseChainParams::TESTNET)
@@ -358,6 +360,7 @@ std::unique_ptr<CChainParams> CreateChainParams(const std::string& chain)
 
 void SelectParams(const std::string& network)
 {
+    strprintf("!!!!!!!!!!!!!! SelectParams")
     SelectBaseParams(network);
     globalChainParams = CreateChainParams(network);
 }
