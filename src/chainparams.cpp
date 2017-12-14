@@ -13,7 +13,6 @@
 #include <assert.h>
 
 #include "chainparamsseeds.h"
-genesis = CreateGenesisBlock(1513197897, 389545, 0x1e0ffff0, 1, 50 * COIN);
 
 static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesisOutputScript, uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
