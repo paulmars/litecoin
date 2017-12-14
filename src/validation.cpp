@@ -1000,9 +1000,18 @@ bool ReadBlockFromDisk(CBlock& block, const CDiskBlockPos& pos, const Consensus:
         return error("%s: Deserialize or I/O error - %s at %s", __func__, e.what(), pos.ToString());
     }
 
+    LogPrintf("!!!!!!!!!!!!!! validation -  read block from disk\n");
+
+
+    LogPrintf("!!!!!!!!!!!!!! %s\n", block.GetPoWHash().ToString());
+    LogPrintf("!!!!!!!!!!!!!! %i\n", block.nBits);
+    LogPrintf("!!!!!!!!!!!!!! %s\n", consensusParams);
+
     // Check the header
     if (!CheckProofOfWork(block.GetPoWHash(), block.nBits, consensusParams))
         return error("ReadBlockFromDisk: Errors in block header at %s", pos.ToString());
+
+    LogPrintf("!!!!!!!!!!!!!! validation -  read block from disk - after poof or work\n");
 
     return true;
 }
