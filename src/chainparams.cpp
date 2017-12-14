@@ -123,8 +123,10 @@ public:
         consensus.hashGenesisBlock = genesis.GetHash();
         LogPrintf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         LogPrintf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %s", genesis.GetHash().ToString());
-        // assert(consensus.hashGenesisBlock == uint256S("0x12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2"));
-        // assert(genesis.hashMerkleRoot == uint256S("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+        LogPrintf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %s", genesis.hashMerkleRoot.ToString());
+        assert(consensus.hashGenesisBlock == uint256S("0x25d0fccccbe700c83d6c91de3995b802fe4ca715f843e34fa0a204a1ffac0e43"));
+        assert(genesis.hashMerkleRoot == uint256S("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+
 
         // Note that of those with the service bits flag, most only support a subset of possible options
         vSeeds.emplace_back("seed-a.fomocoin.loshan.co.uk", true);
