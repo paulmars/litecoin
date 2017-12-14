@@ -1002,7 +1002,6 @@ bool ReadBlockFromDisk(CBlock& block, const CDiskBlockPos& pos, const Consensus:
 
     LogPrintf("!!!!!!!!!!!!!! validation -  read block from disk\n");
 
-
     LogPrintf("!!!!!!!!!!!!!! %s\n", block.GetPoWHash().ToString());
     LogPrintf("!!!!!!!!!!!!!! %i\n", block.nBits);
 
