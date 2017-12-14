@@ -118,12 +118,12 @@ public:
         nDefaultPort = 4030;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1513197897, 389545, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1513197897, 2084524493, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         LogPrintf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %s\n\n\n", genesis.GetHash().ToString());
         LogPrintf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %s\n\n\n", genesis.hashMerkleRoot.ToString());
-        // assert(consensus.hashGenesisBlock == uint256S("0x25d0fccccbe700c83d6c91de3995b802fe4ca715f843e34fa0a204a1ffac0e43"));
-        // assert(genesis.hashMerkleRoot == uint256S("0xa6ed73daffa35e3bad3b9e87a3d2fee722ddce82d4dc46cc3ac42363de5958ad"));
+        assert(consensus.hashGenesisBlock == uint256S("0x25d0fccccbe700c83d6c91de3995b802fe4ca715f843e34fa0a204a1ffac0e43"));
+        assert(genesis.hashMerkleRoot == uint256S("0xa6ed73daffa35e3bad3b9e87a3d2fee722ddce82d4dc46cc3ac42363de5958ad"));
 
 
         // Note that of those with the service bits flag, most only support a subset of possible options
